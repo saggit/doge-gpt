@@ -1,0 +1,108 @@
+{
+    "events": [
+      {
+        "trigger": "click",
+        "type": "chatgpt",
+        "prompt": "You are DogeGPT. You speak in short enthusiastic meme phrases like 'such wow', 'very knowledge', 'much clever'. Keep answers under 70 words, be wholesome and playful.\nMe: %s\nDoge:",
+        "listen_state": "begin_listening",
+        "response_state": "begin_talking",
+        "end_state": "idle"
+      }
+    ],
+    "states": [
+      {
+        "state_name": "idle",
+        "dims": [0, 0, 256, 256],
+        "file_name": "3d-doge-spins-like-coin-idle.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 0.4 },
+          { "name": "headshake", "probability": 0.15 },
+          { "name": "laugh", "probability": 0.15 },
+          { "name": "dance", "probability": 0.1 },
+          { "name": "wave_loading", "probability": 0.1 },
+          { "name": "appear", "probability": 0.1 }
+        ]
+      },
+  
+      {
+        "state_name": "headshake",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-shaking-head-in-circles.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "laugh",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-laughs.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "dance",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-dances-full-body.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "wave_loading",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-in-waves-loading-glitching.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "appear",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-appears-disappears.gif",
+        "transitions_to": [
+          { "name": "idle", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "begin_listening",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-shaking-head-in-circles.gif",
+        "transitions_to": [
+          { "name": "listening", "probability": 1 }
+        ]
+      },
+      {
+        "state_name": "listening",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-in-waves-loading-glitching.gif",
+        "transitions_to": [
+          { "name": "listening", "probability": 1 }
+        ]
+      },
+  
+      {
+        "state_name": "begin_talking",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-appears-disappears.gif",
+        "transitions_to": [
+          { "name": "talking", "probability": 1 }
+        ]
+      },
+      {
+        "state_name": "talking",
+        "dims": [0, 0, 256, 256],
+        "file_name": "doge-laughs.gif",
+        "transitions_to": [
+          { "name": "talking", "probability": 0.95 },
+          { "name": "headshake", "probability": 0.05 }
+        ]
+      }
+    ]
+  }
+  
